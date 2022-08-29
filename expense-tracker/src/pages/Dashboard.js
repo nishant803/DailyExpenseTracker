@@ -9,7 +9,7 @@ import DashboardCalculations from "../Components/Dashboard/DashboardCalculations
 function Dashboard() {
   const { todayExpense, yesterdayExpense, totalExpense, pieChartData,weekExpense,monthExpense,yearExpense } =
     DashboardCalculations();
-  // console.log(pieChartData);
+
   const dashboardData = [
     {
       id: 1,
@@ -72,5 +72,4 @@ function Dashboard() {
     </div>
   );
 }
-
 export default Dashboard;

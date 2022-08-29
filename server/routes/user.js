@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/me", auth, async (req, res) => {
+  console.log(req);
   const user = await User.findById(req.user._id);
   res.send(user);
 });

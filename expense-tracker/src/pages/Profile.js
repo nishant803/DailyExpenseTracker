@@ -64,7 +64,7 @@ function Profile() {
         );
       }
       Swal.fire({
-        title: "Registration Successfull",
+        title: "Updated Successfully",
         icon: "success",
       });
     } catch (err) {

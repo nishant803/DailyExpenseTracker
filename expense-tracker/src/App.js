@@ -11,7 +11,6 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import GenerateReport from "./pages/GenerateReport";
 import Profile from "./pages/Profile";
-
 export default function App() {
   const userName = useSelector(selectUserName);
   return (
@@ -24,7 +23,7 @@ export default function App() {
           <Route exact path="/login" component={Login} />
           <ProtectedRoute exact path="/logout" component={Logout} />
           <ProtectedRoute exact path="/addexpense" component={AddExpense} />
-          <ProtectedRoute
+          <Route
             exact
             path="/manageexpense"
             component={ManageExpense}

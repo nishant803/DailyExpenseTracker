@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import "./addExpense.css";
 import Modal from "../Components/Modal";
 import { AddExpenseValidation } from "../Components/Validate";
+import FormDialogue from "../Components/FormDialogue";
 
 function Expense(date) {
   const history = useHistory();
@@ -49,72 +50,8 @@ function Expense(date) {
       <Navbar />
 
       <div className="addExpense">
-        <div className="addExpense__inner">
-          <form
-            className="addExpense__form"
-            method="POST"
-            onSubmit={handleSubmit}
-          >
-            <div >{isOpen && <Modal title="Expense Added Successfully" />}</div>
-            <h1>Add Expense</h1>
-            <div className="addExpense__form-group">
-              <label className="addExpense__formLabel" htmlFor="date">
-                Date
-              </label>
-              <input
-                className="addExpense__formInput"
-                type="date"
-                name="date"
-                onChange={handleChange}
-              />
-              <p className="addExpense__errorMessage">{formErrors?.date}</p>
-            </div>
-            <div className="addExpense__form-group">
-              <label className="addExpense__formLabel">Type</label>
-              <select
-                className="addExpense__formInput"
-                onChangeCapture={handleChange}
-                name="type"
-              >
-                <option defaultValue="Choose Category">Choose Category</option>
-                <option value="Food">Food</option>
-                <option value="Clothes">Clothes</option>
-                <option value="Rent">Rent</option>
-                <option value="Movie">Movie</option>
-                <option onChange={() => setIsOpen(true)} value="other">
-                  Other
-                </option>
-              </select>
-              {isOther && <input type="text" />}
-              <p className="addExpense__errorMessage">{formErrors?.type}</p>
-            </div>
-            <div className="addExpense__form-group">
-              <label className="addExpense__formLabel">Description</label>
-              <input
-                className="addExpense__formInput"
-                type="text"
-                name="description"
-                onChange={handleChange}
-                value={data.description || ""}
-              />
-              <p className="addExpense__errorMessage">
-                {formErrors?.description}
-              </p>
-            </div>
-            <div className="addExpense__form-group">
-              <label className="addExpense__formLabel">Price</label>
-              <input
-                className="addExpense__formInput"
-                type="number"
-                name="price"
-                onChange={handleChange}
-                value={data.price || ""}
-              />
-              <p className="addExpense__errorMessage">{formErrors?.price}</p>
-            </div>
-            <input className="addExpense__formSubmitButton" type="submit" />
-          </form>
-        </div>
+      <FormDialogue open={true}  formErrors = {formErrors} type="add"
+        data={data} handleChange={handleChange} handleSubmit={handleSubmit} />
       </div>
     </div>
   );

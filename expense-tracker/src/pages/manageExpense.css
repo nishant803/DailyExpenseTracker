@@ -17,7 +17,22 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
-  
+  .updateExpense__form{
+    position: fixed;
+    border: none;
+    border-radius: 1rem;
+    top: 10%;
+    background-color: #4DA8DA;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10rem;
+    height: 35rem;
+    padding: 2rem 4rem;
+    width: 27rem;
+    margin: auto;
+    left: 30%;
+  }
   .btn:after {
     content: '';
     position: absolute;

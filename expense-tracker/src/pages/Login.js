@@ -77,6 +77,7 @@ function Login() {
             <div className="signup-form">
               <h1 className="form-title">Sign In</h1>
               <form
+              autoComplete="off"
                 className="register-form"
                 method="POST"
                 onSubmit={handleSubmit}

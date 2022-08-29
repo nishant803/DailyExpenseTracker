@@ -7,7 +7,7 @@ function DashboardCalculations() {
   );
   const { apiData: yesterdayData } = useFetch(
     "http://localhost:3001/api/expense/yesterday"
-  );
+  ); 
   const { apiData: weekData } = useFetch(
     "http://localhost:3001/api/expense/week"
   );

@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  messages: [
+  expenses: [
     {
       type: {
         type: String,
@@ -63,11 +63,11 @@ userSchema.methods.getAuthToken = function () {
   const token = jwt.sign({ _id: this._id }, "jwtPrivateKey");
   return token;
 };
-userSchema.methods.addMessage = async function (type, price, description,date) {
+userSchema.methods.addExpense = async function (type, price, description,date) {
   try {
-    this.messages = this.messages.concat({ type, price, description,date });
+    this.expenses = this.expenses.concat({ type, price, description,date });
     await this.save();
-    return this.messages;
+    return this.expenses;
   } catch (err) {
     console.log(err);
   }

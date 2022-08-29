@@ -63,7 +63,7 @@ function Register() {
           <div className="signup-content">
             <div className="signup-form">
               <h1 className="form-title">Sign up</h1>
-              <form className="register-form" onSubmit={handleSubmit}>
+              <form className="register-form" autoComplete="off" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label className="register__label" htmlFor="name">
                     <IoMdContact />
